@@ -1,7 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Chops on Sudan</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+   
+   
+   <script>
+      // Waiting for the content in the page to be fully loaded
+      // this is called event listeners
+      document.addEventListener('DOMContentLoaded', function () {
+        // get our close buttons
+        let closeBtns = document.getElementsByClassName('close')
+        // turn them from an HTML collection into an array
+        closeBtns = [].slice.call(closeBtns)
+        // apply an event listener to all close buttons
+        closeBtns.forEach((btn) => {
+          btn.addEventListener('click', reload)
+        })
+      })
+      // This is the function to reset all of the iframes when you close a modal.
+      // this ensures that the video isnt still playing in the background when you clsoe a modal!
+
+      // reload iframes when opening or closing a modal window
+      function reload() {
+        // get all of our iframes with videos in them
+        let videos = document.getElementsByTagName('iframe')
+        // turn the HTML collection into an array
+        videos = [].slice.call(videos)
+        // reload all of the iframe sources (this will force them all to stop playing)
+        videos.forEach((video) => {
+          video.src = video.src
+          console.log('resetting iframe source to: ', video.src)
+        })
+      }
+      function toggleMenu() {
+        // grab the UL by ID
+        var menu = document.getElementById('menu')
+        // add/remove atcive class to show/hide dropdown with links
+        menu.classList.toggle('active')
+      }
+
+    </script>
+  
   </head>
   <body>
     <p>"hello"</p>
